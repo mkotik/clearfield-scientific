@@ -59,8 +59,7 @@ export default function Footer() {
                 <a href="mailto:info@clearpointscientific.com" className="cp-footlink" style={linkStyle}>
                   info@clearpointscientific.com
                 </a>
-                <span style={{ color: '#8A9AAE', fontSize: 15 }}>(000) 000-0000</span>
-                <a href="#contact" className="cp-footlink" style={{ ...linkStyle, color: '#6FA8EE', fontWeight: 600 }}>
+<a href="#contact" className="cp-footlink" style={{ ...linkStyle, color: '#6FA8EE', fontWeight: 600 }}>
                   Get a quote →
                 </a>
               </div>
