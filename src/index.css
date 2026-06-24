@@ -124,6 +124,17 @@ a {
   border-color: var(--blue);
 }
 
+.cp-btn-outline {
+  transition:
+    border-color 0.15s ease,
+    color 0.15s ease,
+    background-color 0.15s ease;
+}
+.cp-btn-outline:hover {
+  border-color: var(--blue);
+  color: var(--blue);
+}
+
 .cp-footlink {
   transition: color 0.15s ease;
 }
