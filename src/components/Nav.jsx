@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { LogoLockup } from './primitives.jsx'
 
 const navLinkStyle = {
@@ -11,12 +12,14 @@ const navLinkStyle = {
 
 const links = [
   { href: '#top', label: 'Home' },
-  { href: '#why', label: 'Why Us' },
+  { href: '#why', label: 'Why Us' },
   { href: '#process', label: 'Process' },
   { href: '#contact', label: 'Contact' },
 ]
 
 export default function Nav() {
+  const [open, setOpen] = useState(false)
+
   return (
     <header
       style={{
@@ -41,10 +44,12 @@ export default function Nav() {
           gap: 24,
         }}
       >
-        <a href="#top" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
+        <a href="#top" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center' }} onClick={() => setOpen(false)}>
           <LogoLockup />
         </a>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 32, flexWrap: 'wrap', justifyContent: 'flex-end' }}>
+
+        {/* Desktop links */}
+        <div className="cp-nav-desktop">
           {links.map((l) => (
             <a key={l.label} href={l.href} className="cp-navlink" style={navLinkStyle}>
               {l.label}
@@ -66,7 +71,67 @@ export default function Nav() {
             Get a Quote
           </a>
         </div>
+
+        {/* Mobile hamburger */}
+        <button
+          type="button"
+          className="cp-nav-burger"
+          aria-label={open ? 'Close menu' : 'Open menu'}
+          aria-expanded={open}
+          onClick={() => setOpen((v) => !v)}
+        >
+          {open ? (
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round">
+              <line x1="4" y1="4" x2="18" y2="18" />
+              <line x1="18" y1="4" x2="4" y2="18" />
+            </svg>
+          ) : (
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round">
+              <line x1="3" y1="6" x2="19" y2="6" />
+              <line x1="3" y1="11" x2="19" y2="11" />
+              <line x1="3" y1="16" x2="19" y2="16" />
+            </svg>
+          )}
+        </button>
       </nav>
+
+      {/* Mobile dropdown menu */}
+      {open && (
+        <div
+          className="cp-mobile-menu"
+          style={{
+            borderTop: '1px solid #E1E8F0',
+            background: 'rgba(251,252,253,0.97)',
+            backdropFilter: 'saturate(180%) blur(12px)',
+            WebkitBackdropFilter: 'saturate(180%) blur(12px)',
+          }}
+        >
+          <div style={{ maxWidth: 'var(--maxw)', margin: '0 auto', padding: '8px var(--pad-x) 20px', display: 'flex', flexDirection: 'column' }}>
+            {links.map((l) => (
+              <a key={l.label} href={l.href} className="cp-mobile-link" onClick={() => setOpen(false)}>
+                {l.label}
+              </a>
+            ))}
+            <a
+              href="#contact"
+              onClick={() => setOpen(false)}
+              style={{
+                textDecoration: 'none',
+                background: '#0B2545',
+                color: '#fff',
+                fontWeight: 600,
+                fontSize: 15,
+                padding: '14px 20px',
+                borderRadius: 4,
+                textAlign: 'center',
+                marginTop: 16,
+              }}
+            >
+              Get a Quote
+            </a>
+          </div>
+        </div>
+      )}
     </header>
   )
 }

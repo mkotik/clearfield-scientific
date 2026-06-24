@@ -58,43 +58,28 @@ export default function Process({ showGrid = true }) {
             in three steps.
           </h2>
         </div>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: 0 }}>
-          {steps.map((s, i) => {
-            const isLast = i === steps.length - 1
-            const padding = i === 0 ? '30px 32px 0 0' : isLast ? '30px 0 0 32px' : '30px 32px 0'
-            return (
-              <div key={s.num} style={{ position: 'relative', borderTop: '1px solid rgba(255,255,255,0.18)', padding }}>
-                <span
-                  style={{
-                    position: 'absolute',
-                    top: -6.5,
-                    left: isLast ? 32 : 0,
-                    width: 12,
-                    height: 12,
-                    background: '#1E6FD8',
-                    borderRadius: '50%',
-                    boxShadow: '0 0 0 4px #0B2545',
-                  }}
-                />
-                <div style={{ fontFamily: 'var(--font-mono)', fontSize: 14, color: '#6FA8EE', marginBottom: 14 }}>
-                  {s.num}
-                </div>
-                <h3
-                  style={{
-                    fontFamily: 'var(--font-display)',
-                    fontWeight: 700,
-                    fontSize: 23,
-                    color: '#fff',
-                    margin: '0 0 12px',
-                    letterSpacing: '-0.4px',
-                  }}
-                >
-                  {s.title}
-                </h3>
-                <p style={{ fontSize: 16, lineHeight: 1.6, color: '#AFC0D4', margin: 0 }}>{s.desc}</p>
+        <div className="cp-process-grid">
+          {steps.map((s) => (
+            <div key={s.num} className="cp-process-step">
+              <span className="cp-process-dot" />
+              <div style={{ fontFamily: 'var(--font-mono)', fontSize: 14, color: '#6FA8EE', marginBottom: 14 }}>
+                {s.num}
               </div>
-            )
-          })}
+              <h3
+                style={{
+                  fontFamily: 'var(--font-display)',
+                  fontWeight: 700,
+                  fontSize: 23,
+                  color: '#fff',
+                  margin: '0 0 12px',
+                  letterSpacing: '-0.4px',
+                }}
+              >
+                {s.title}
+              </h3>
+              <p style={{ fontSize: 16, lineHeight: 1.6, color: '#AFC0D4', margin: 0 }}>{s.desc}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>

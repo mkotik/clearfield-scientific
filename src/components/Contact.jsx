@@ -50,26 +50,54 @@ export default function Contact({ showGrid = true }) {
             Email what you need and a ClearPoint specialist replies with availability and pricing — fast. No account,
             no minimum order.
           </p>
-          <a
-            href="mailto:info@clearpointscientific.com"
-            className="cp-email-big"
-            style={{
-              display: 'inline-block',
-              textDecoration: 'none',
-              fontFamily: 'var(--font-display)',
-              fontWeight: 800,
-              fontSize: 'clamp(22px, 3.6vw, 40px)',
-              letterSpacing: '-1px',
-              color: '#0B2545',
-              borderBottom: '2px solid #C9D5E3',
-              paddingBottom: 6,
-            }}
-          >
-            info@clearpointscientific.com
-          </a>
           <div
             style={{
-              marginTop: 34,
+              display: 'flex',
+              flexWrap: 'wrap',
+              justifyContent: 'center',
+              gap: '12px 32px',
+              marginBottom: 36,
+            }}
+          >
+            {[
+              { label: 'Orders', addr: 'orders@clearpointscientific.com' },
+              { label: 'Support', addr: 'support@clearpointscientific.com' },
+            ].map(({ label, addr }) => (
+              <div key={addr} style={{ textAlign: 'center' }}>
+                <div style={{ fontFamily: 'var(--font-mono)', fontSize: 11, letterSpacing: '2px', textTransform: 'uppercase', color: '#1E6FD8', marginBottom: 6 }}>{label}</div>
+                <a
+                  href={`mailto:${addr}`}
+                  style={{
+                    display: 'inline-block',
+                    textDecoration: 'none',
+                    fontFamily: 'var(--font-display)',
+                    fontWeight: 700,
+                    fontSize: 'clamp(14px, 2.2vw, 22px)',
+                    letterSpacing: '-0.4px',
+                    color: '#0B2545',
+                    borderBottom: '2px solid #C9D5E3',
+                    paddingBottom: 4,
+                  }}
+                >
+                  {addr}
+                </a>
+              </div>
+            ))}
+          </div>
+          <div
+            style={{
+              marginTop: 8,
+              marginBottom: 28,
+              fontFamily: 'var(--font-mono)',
+              fontSize: 12.5,
+              letterSpacing: '0.5px',
+              color: '#6B7787',
+            }}
+          >
+            971 US Highway 202N #6585 · Branchburg, NJ 08876
+          </div>
+          <div
+            style={{
               display: 'flex',
               flexWrap: 'wrap',
               justifyContent: 'center',
@@ -81,8 +109,6 @@ export default function Contact({ showGrid = true }) {
             }}
           >
             <span>↳ Reply within hours</span>
-            <span style={{ color: '#C2CEDC' }}>/</span>
-            <span>(000) 000-0000</span>
             <span style={{ color: '#C2CEDC' }}>/</span>
             <span>Mon–Fri</span>
           </div>

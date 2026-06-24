@@ -76,6 +76,22 @@ export default function Hero({ showGrid = true, showFigures = true }) {
               Get a Quote
             </a>
             <a
+              href={`mailto:info@clearpointscientific.com?subject=${encodeURIComponent('Catalog Request')}&body=${encodeURIComponent('Hi,\n\nI would like to request a copy of your product catalog.\n\nName:\nOrganization:\n')}`}
+              className="cp-btn-outline"
+              style={{
+                textDecoration: 'none',
+                border: '1.5px solid #C9D5E3',
+                color: '#0B2545',
+                fontWeight: 600,
+                fontSize: 16,
+                padding: '15px 28px',
+                borderRadius: 5,
+                background: 'transparent',
+              }}
+            >
+              Request a Catalog
+            </a>
+            <a
               href="mailto:info@clearpointscientific.com"
               className="cp-email-inline"
               style={{
@@ -87,6 +103,8 @@ export default function Hero({ showGrid = true, showFigures = true }) {
                 letterSpacing: '0.3px',
                 borderBottom: '1px solid #C2CEDC',
                 paddingBottom: 3,
+                maxWidth: '100%',
+                overflowWrap: 'anywhere',
               }}
             >
               info@clearpointscientific.com →
