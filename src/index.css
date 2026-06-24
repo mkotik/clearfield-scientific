@@ -1,0 +1,128 @@
+:root {
+  /* Colors */
+  --ink: #0b2545;
+  --ink-deep: #081a2e;
+  --blue: #1e6fd8;
+  --blue-light: #6fa8ee;
+  --page: #fbfcfd;
+  --white: #ffffff;
+  --body: #4a5666;
+  --body-muted: #51606f;
+  --body-muted-2: #6b7787;
+  --mono-muted: #95a2b2;
+  --mono-muted-2: #8593a4;
+  --hairline: #e1e8f0;
+  --hairline-2: #edf1f6;
+  --hairline-3: #dde5ef;
+  --frame: #c9d5e3;
+  --body-dark: #afc0d4;
+  --body-dark-2: #b9c6d6;
+
+  /* Fonts */
+  --font-display: 'Schibsted Grotesk', sans-serif;
+  --font-body: 'Hanken Grotesk', system-ui, sans-serif;
+  --font-mono: 'Spline Sans Mono', monospace;
+
+  /* Layout */
+  --maxw: 1240px;
+  --pad-x: 36px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: #16263b;
+  background: var(--page);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+}
+
+@keyframes cpFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes cpPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 0.55;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .cp-fade-up,
+  .cp-pulse {
+    animation: none !important;
+  }
+}
+
+/* ---- Hover states (inline styles can't express :hover) ---- */
+.cp-navlink {
+  transition: color 0.15s ease;
+}
+.cp-navlink:hover {
+  color: var(--blue);
+}
+
+.cp-btn-ink {
+  transition: background-color 0.15s ease;
+}
+.cp-btn-ink:hover {
+  background: var(--blue);
+}
+
+.cp-btn-blue {
+  transition: background-color 0.15s ease;
+}
+.cp-btn-blue:hover {
+  background: var(--ink);
+}
+
+.cp-email-inline {
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+.cp-email-inline:hover {
+  color: var(--blue);
+  border-color: var(--blue);
+}
+
+.cp-email-big {
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+.cp-email-big:hover {
+  color: var(--blue);
+  border-color: var(--blue);
+}
+
+.cp-footlink {
+  transition: color 0.15s ease;
+}
+.cp-footlink:hover {
+  color: #fff;
+}
