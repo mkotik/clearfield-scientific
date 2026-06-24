@@ -2,8 +2,7 @@ import { LocatingDot, Crosshair, GridOverlay } from './primitives.jsx'
 
 // Swap in a real modern-laboratory photo (~1000×800px landscape).
 // Set to a URL or imported asset to replace the datasheet placeholder.
-const HERO_IMAGE =
-  'https://images.unsplash.com/photo-1581093588401-fbb62a02f120?auto=format&fit=crop&w=1000&h=800&q=80'
+const HERO_IMAGE = '/hero.png'
 
 export default function Hero({ showGrid = true, showFigures = true }) {
   return (
