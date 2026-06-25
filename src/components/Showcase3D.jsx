@@ -279,7 +279,7 @@ export default function Showcase3D() {
                 >
                   Request a Catalog
                 </a>
-                <a
+                {/* <a
                   href="mailto:info@clearpointscientific.com"
                   className="cp-email-inline-light"
                   style={{
@@ -298,7 +298,7 @@ export default function Showcase3D() {
                 >
                   info@clearpointscientific.com{" "}
                   <span className="cp-arrow">→</span>
-                </a>
+                </a> */}
               </div>
             </div>
           </div>
