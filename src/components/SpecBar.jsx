@@ -20,11 +20,13 @@ const specs = [
   { label: 'Sourcing', value: 'Custom & specialty' },
 ]
 
+const SOURCES = ['Labware', 'Reagents', 'PPE', 'Instruments', 'Filtration', 'Cryogenics']
+
 export default function SpecBar() {
   return (
     <section style={{ background: '#fff', borderBottom: '1px solid #E1E8F0' }}>
       <div style={{ maxWidth: 'var(--maxw)', margin: '0 auto', padding: '0 var(--pad-x)' }}>
-        <div className="cp-spec-grid">
+        <div className="cp-spec-grid cp-reveal">
           {specs.map((s) => (
             <div key={s.label} className="cp-spec-cell">
               <div style={labelStyle}>{s.label}</div>
@@ -32,9 +34,10 @@ export default function SpecBar() {
             </div>
           ))}
         </div>
-        <div style={{ padding: '18px 0', display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 14 }}>
+        <div style={{ padding: '18px 0', display: 'flex', flexWrap: 'nowrap', alignItems: 'center', gap: 14 }}>
           <span
             style={{
+              flex: 'none',
               fontFamily: 'var(--font-mono)',
               fontSize: 11.5,
               letterSpacing: '1.5px',
@@ -44,9 +47,24 @@ export default function SpecBar() {
           >
             We source —
           </span>
-          <span style={{ fontFamily: 'var(--font-mono)', fontSize: 12.5, color: '#6B7787', lineHeight: 1.7 }}>
-            Labware&nbsp;· Reagents&nbsp;· PPE&nbsp;· Instruments&nbsp;· Filtration&nbsp;· Cryogenics
-          </span>
+          <div className="cp-marquee" style={{ flex: '1 1 0', minWidth: 0 }}>
+            <div className="cp-marquee-track">
+              {[0, 1].map((k) => (
+                <span
+                  key={k}
+                  aria-hidden={k === 1}
+                  style={{ fontFamily: 'var(--font-mono)', fontSize: 12.5, color: '#6B7787', paddingRight: 28 }}
+                >
+                  {SOURCES.map((item) => (
+                    <span key={item}>
+                      {item}
+                      <span style={{ color: '#C2CEDC' }}>&nbsp;·&nbsp;</span>
+                    </span>
+                  ))}
+                </span>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>

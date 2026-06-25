@@ -60,7 +60,7 @@ export default function Footer() {
                   info@clearpointscientific.com
                 </a>
 <a href="#contact" className="cp-footlink" style={{ ...linkStyle, color: '#6FA8EE', fontWeight: 600 }}>
-                  Get a quote →
+                  Get a quote <span className="cp-arrow">→</span>
                 </a>
               </div>
             </div>

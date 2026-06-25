@@ -29,7 +29,7 @@ export default function Process({ showGrid = true }) {
       <Crosshair bottom={28} right={30} size={18} color="rgba(111,168,238,0.5)" />
 
       <div style={{ position: 'relative', maxWidth: 'var(--maxw)', margin: '0 auto' }}>
-        <div style={{ maxWidth: 660, marginBottom: 64 }}>
+        <div className="cp-reveal" style={{ maxWidth: 660, marginBottom: 64 }}>
           <div
             style={{
               fontFamily: 'var(--font-mono)',
@@ -59,13 +59,14 @@ export default function Process({ showGrid = true }) {
           </h2>
         </div>
         <div className="cp-process-grid">
-          {steps.map((s) => (
-            <div key={s.num} className="cp-process-step">
+          {steps.map((s, i) => (
+            <div key={s.num} className="cp-process-step cp-reveal" style={{ transitionDelay: `${i * 110}ms` }}>
               <span className="cp-process-dot" />
               <div style={{ fontFamily: 'var(--font-mono)', fontSize: 14, color: '#6FA8EE', marginBottom: 14 }}>
                 {s.num}
               </div>
               <h3
+                className="cp-process-title"
                 style={{
                   fontFamily: 'var(--font-display)',
                   fontWeight: 700,

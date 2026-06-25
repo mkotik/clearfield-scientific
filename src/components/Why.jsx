@@ -20,7 +20,7 @@ export default function Why() {
   return (
     <section id="why" style={{ background: '#FBFCFD', padding: '100px var(--pad-x)' }}>
       <div style={{ maxWidth: 'var(--maxw)', margin: '0 auto' }}>
-        <div style={{ maxWidth: 720, marginBottom: 64 }}>
+        <div className="cp-reveal" style={{ maxWidth: 720, marginBottom: 64 }}>
           <div
             style={{
               fontFamily: 'var(--font-mono)',
@@ -55,19 +55,23 @@ export default function Why() {
         </div>
 
         {rows.map((r, i) => (
+          <div key={r.num} className="cp-reveal" style={{ transitionDelay: `${i * 90}ms` }}>
           <div
-            key={r.num}
+            className="cp-ledger-row"
             style={{
               display: 'flex',
               alignItems: 'flex-start',
               flexWrap: 'wrap',
               gap: '24px 40px',
-              padding: '38px 0',
+              padding: '38px 24px 38px 16px',
+              marginLeft: -16,
+              marginRight: -24,
               borderTop: '1px solid #DDE5EF',
               borderBottom: i === rows.length - 1 ? '1px solid #DDE5EF' : undefined,
             }}
           >
             <div
+              className="cp-ledger-num"
               style={{
                 fontFamily: 'var(--font-mono)',
                 fontSize: 15,
@@ -81,6 +85,7 @@ export default function Why() {
               {r.num}
             </div>
             <h3
+              className="cp-ledger-title"
               style={{
                 fontFamily: 'var(--font-display)',
                 fontWeight: 700,
@@ -94,6 +99,7 @@ export default function Why() {
               {r.title}
             </h3>
             <p style={{ fontSize: 17, lineHeight: 1.6, color: '#51606F', margin: 0, flex: '1.6 1 320px' }}>{r.desc}</p>
+          </div>
           </div>
         ))}
       </div>

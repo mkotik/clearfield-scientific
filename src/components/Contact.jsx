@@ -4,7 +4,7 @@ export default function Contact({ showGrid = true }) {
   return (
     <section id="contact" style={{ position: 'relative', background: '#FBFCFD', padding: '104px var(--pad-x)', overflow: 'hidden' }}>
       {showGrid && <GridOverlay />}
-      <div style={{ position: 'relative', maxWidth: 980, margin: '0 auto' }}>
+      <div className="cp-reveal" style={{ position: 'relative', maxWidth: 980, margin: '0 auto' }}>
         <div
           style={{
             position: 'relative',
@@ -63,10 +63,11 @@ export default function Contact({ showGrid = true }) {
               { label: 'Orders', addr: 'orders@clearpointscientific.com' },
               { label: 'Support', addr: 'support@clearpointscientific.com' },
             ].map(({ label, addr }) => (
-              <div key={addr} style={{ textAlign: 'center' }}>
+              <div key={addr} className="cp-dept" style={{ textAlign: 'center' }}>
                 <div style={{ fontFamily: 'var(--font-mono)', fontSize: 11, letterSpacing: '2px', textTransform: 'uppercase', color: '#1E6FD8', marginBottom: 6 }}>{label}</div>
                 <a
                   href={`mailto:${addr}`}
+                  className="cp-dept-link"
                   style={{
                     display: 'inline-block',
                     textDecoration: 'none',
