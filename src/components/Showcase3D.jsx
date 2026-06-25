@@ -166,7 +166,7 @@ export default function Showcase3D() {
             display: "flex",
             alignItems: "center",
             boxSizing: "border-box",
-            padding: "250px 0 160px",
+            padding: "250px 0 220px",
           }}
         >
           <div
