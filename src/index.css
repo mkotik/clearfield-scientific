@@ -19,9 +19,10 @@
   --body-dark-2: #b9c6d6;
 
   /* Fonts */
-  --font-display: "Schibsted Grotesk", sans-serif;
-  --font-body: "Hanken Grotesk", system-ui, sans-serif;
-  --font-mono: "Spline Sans Mono", monospace;
+  --font-serif: "Fraunces", Georgia, serif; /* big statement headings */
+  --font-display: "Bricolage Grotesque", system-ui, sans-serif; /* structural headings + wordmark */
+  --font-body: "Hanken Grotesk", system-ui, sans-serif; /* body copy */
+  --font-mono: "JetBrains Mono", ui-monospace, monospace; /* technical labels */
 
   /* Layout */
   --maxw: 1240px;
@@ -133,6 +134,27 @@ a {
 .cp-btn-outline:hover {
   border-color: var(--blue);
   color: var(--blue);
+}
+
+/* light-on-video variants (used over the scrub panel) */
+.cp-btn-outline-light {
+  transition:
+    border-color 0.15s ease,
+    background-color 0.15s ease;
+}
+.cp-btn-outline-light:hover {
+  border-color: #fff;
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.cp-email-inline-light {
+  transition:
+    color 0.15s ease,
+    border-color 0.15s ease;
+}
+.cp-email-inline-light:hover {
+  color: #9cc2f2;
+  border-color: #9cc2f2;
 }
 
 .cp-footlink {

@@ -32,7 +32,7 @@ export function Crosshair({ top, right, bottom, left, size = 16, color = '#1E6FD
         right,
         bottom,
         left,
-        fontFamily: "'Spline Sans Mono', monospace",
+        fontFamily: 'var(--font-mono)',
         fontSize: size,
         color,
         pointerEvents: 'none',

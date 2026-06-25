@@ -35,11 +35,11 @@ export default function Why() {
           </div>
           <h2
             style={{
-              fontFamily: 'var(--font-display)',
+              fontFamily: 'var(--font-serif)',
               fontWeight: 700,
               fontSize: 'clamp(32px, 4vw, 50px)',
               lineHeight: 1.06,
-              letterSpacing: '-1.4px',
+              letterSpacing: '-0.5px',
               color: '#0B2545',
               margin: '0 0 20px',
             }}

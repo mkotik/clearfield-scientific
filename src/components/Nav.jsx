@@ -23,8 +23,12 @@ export default function Nav() {
   return (
     <header
       style={{
-        position: 'sticky',
+        // fixed (not sticky) so it overlays instead of reserving 76px of layout
+        // space at the top — that reserved space is what delayed the scrub start.
+        position: 'fixed',
         top: 0,
+        left: 0,
+        right: 0,
         zIndex: 60,
         background: 'rgba(251,252,253,0.82)',
         backdropFilter: 'saturate(180%) blur(12px)',

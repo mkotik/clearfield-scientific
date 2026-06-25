@@ -44,11 +44,11 @@ export default function Process({ showGrid = true }) {
           </div>
           <h2
             style={{
-              fontFamily: 'var(--font-display)',
+              fontFamily: 'var(--font-serif)',
               fontWeight: 700,
               fontSize: 'clamp(32px, 4vw, 50px)',
               lineHeight: 1.06,
-              letterSpacing: '-1.4px',
+              letterSpacing: '-0.5px',
               color: '#fff',
               margin: 0,
             }}
